@@ -1,23 +1,18 @@
 import 'dart:convert';
-import 'dart:io';
+import 'package:http/http.dart' as http;
 
 import 'package:employeeadmin/model/valueObject/Department.dart';
 import 'package:employeeadmin/model/valueObject/User.dart';
-import 'package:http/io_client.dart' as http;
 import 'package:puremvc/puremvc.dart';
 
 class UserProxy extends Proxy {
 
   static String NAME = "UserProxy";
 
-  late final http.IOClient _client;
-
-  UserProxy(): super(NAME, <User>[]) { // bypassing self-signed certificate
-    _client = http.IOClient(HttpClient()..badCertificateCallback = (X509Certificate cert, String host, int port) => true);
-  }
+  UserProxy(): super(NAME, null) {}
 
   Future<List<User>> findAllUsers() async {
-    final response = await _client.get(Uri.parse("https://10.0.2.2/employees")); // iOS localhost
+    final response = await http.get(Uri.parse("https://10.0.2.2/users"));
 
     if (response.statusCode == 200) {
       List<dynamic> data = jsonDecode(response.body);
@@ -28,7 +23,7 @@ class UserProxy extends Proxy {
   }
 
   Future<User> findById(int id) async {
-    final response = await _client.get(Uri.parse("https://10.0.2.2/employees/${id}"));
+    final response = await http.get(Uri.parse("https://10.0.2.2/users/${id}"));
 
     if (response.statusCode == 200) {
       dynamic json = jsonDecode(response.body);
@@ -39,7 +34,7 @@ class UserProxy extends Proxy {
   }
 
   Future<List<Department>> findAllDepartments() async {
-    final response = await _client.get(Uri.parse("https://10.0.2.2/departments"));
+    final response = await http.get(Uri.parse("https://10.0.2.2/departments"));
 
     if (response.statusCode == 200) {
       List<dynamic> data = jsonDecode(response.body);

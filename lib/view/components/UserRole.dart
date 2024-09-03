@@ -18,7 +18,7 @@ class UserRoleState extends State<UserRole> {
 
   @override
   void dispose() {
-    EventBus().dispatch(ApplicationConstants.UNMOUNTED, this);
+    EventBus().dispatch(ApplicationConstants.USER_ROLE_UNMOUNTED, this);
     super.dispose();
   }
 }

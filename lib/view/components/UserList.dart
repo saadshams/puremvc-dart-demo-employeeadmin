@@ -20,7 +20,7 @@ class UserListState extends State<UserList> {
   @override
   void initState() {
     super.initState();
-    EventBus().dispatch(ApplicationConstants.MOUNTED, this);
+    EventBus().dispatch(ApplicationConstants.USER_LIST_MOUNTED, this);
   }
 
   @override
@@ -63,7 +63,7 @@ class UserListState extends State<UserList> {
 
   @override
   void dispose() {
-    EventBus().dispatch(ApplicationConstants.UNMOUNTED, this);
+    EventBus().dispatch(ApplicationConstants.USER_LIST_UNMOUNTED, this);
     super.dispose();
   }
 

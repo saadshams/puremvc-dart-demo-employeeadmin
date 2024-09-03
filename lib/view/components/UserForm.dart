@@ -35,7 +35,7 @@ class UserFormState extends State<UserForm> {
   @override
   void initState() {
     super.initState();
-    EventBus().dispatch(ApplicationConstants.MOUNTED, this);
+    EventBus().dispatch(ApplicationConstants.USER_FORM_MOUNTED, this);
     stream?.add({
       "action": ApplicationConstants.USER_SELECTED,
       "detail": widget.user
@@ -211,7 +211,7 @@ class UserFormState extends State<UserForm> {
     _username.dispose();
     _password.dispose();
     _confirm.dispose();
-    EventBus().dispatch(ApplicationConstants.UNMOUNTED, this);
+    EventBus().dispatch(ApplicationConstants.USER_FORM_UNMOUNTED, this);
     super.dispose();
   }
 }

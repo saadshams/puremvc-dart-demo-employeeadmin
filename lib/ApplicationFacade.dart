@@ -1,9 +1,7 @@
-import "package:employeeadmin/ApplicationConstants.dart";
 import "package:employeeadmin/controller/RegisterCommand.dart";
 import "package:puremvc/puremvc.dart";
 
 import "controller/StartupCommand.dart";
-import "view/EventBus.dart";
 
 class ApplicationFacade extends Facade {
 
@@ -22,21 +20,12 @@ class ApplicationFacade extends Facade {
     registerCommand(REGISTER, () => RegisterCommand());
   }
 
-  void register(dynamic sender) {
-    sendNotification(ApplicationFacade.REGISTER, sender);
-  }
-
   static ApplicationFacade getInstance(String key) {
     return Facade.getInstance(key, (k) => ApplicationFacade(k)) as ApplicationFacade;
   }
 
   void startup() {
-    EventBus().subscribe(ApplicationConstants.MOUNTED, register);
     sendNotification(STARTUP);
-  }
-
-  void dispose() {
-    EventBus().unsubscribe(ApplicationConstants.UNMOUNTED, register);
   }
 
 }
