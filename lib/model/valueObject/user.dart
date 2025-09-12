@@ -8,7 +8,7 @@ class User {
   String? password;
   DeptEnum? department;
 
-  User({this.username, this.first, this.last, this.email, this.password, this.department = DeptEnum.NONE_SELECTED});
+  User({this.username, this.first, this.last, this.email, this.password, this.department = DeptEnum.noneSelected});
 
   @override
   String toString() {

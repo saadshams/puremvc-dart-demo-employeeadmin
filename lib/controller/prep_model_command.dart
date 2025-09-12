@@ -12,16 +12,16 @@ class PrepModelCommand extends SimpleCommand {
   void execute(INotification notification) {
 
     var userProxy = UserProxy();
-    userProxy.save(User(username: 'lstooge', first: 'Larry', last: 'Stooge', email: 'larry@stooges.com', password: 'ijk456', department: DeptEnum.ACCT));
-    userProxy.save(User(username: 'cstooge', first: 'Curly', last: 'Stooge', email: 'curly@stooges.com', password: 'xyz987', department: DeptEnum.SALES));
-    userProxy.save(User(username: 'mstooge', first: 'Moe', last: 'Stooge', email: 'moe@stooges.com', password: 'abc123', department: DeptEnum.PLANT));
+    userProxy.save(User(username: 'lstooge', first: 'Larry', last: 'Stooge', email: 'larry@stooges.com', password: 'ijk456', department: DeptEnum.acct));
+    userProxy.save(User(username: 'cstooge', first: 'Curly', last: 'Stooge', email: 'curly@stooges.com', password: 'xyz987', department: DeptEnum.sales));
+    userProxy.save(User(username: 'mstooge', first: 'Moe', last: 'Stooge', email: 'moe@stooges.com', password: 'abc123', department: DeptEnum.plant));
 
     facade.registerProxy(userProxy);
 
     var roleProxy = RoleProxy();
-    roleProxy.updateRoles('lstooge', [RoleEnum.PAYROLL, RoleEnum.EMP_BENEFITS]);
-    roleProxy.updateRoles('cstooge', [RoleEnum.ACCT_PAY, RoleEnum.ACCT_RCV, RoleEnum.GEN_LEDGER]);
-    roleProxy.updateRoles('mstooge', [RoleEnum.INVENTORY, RoleEnum.PRODUCTION, RoleEnum.SALES, RoleEnum.SHIPPING]);
+    roleProxy.updateRoles('lstooge', [RoleEnum.payroll, RoleEnum.empBenefits]);
+    roleProxy.updateRoles('cstooge', [RoleEnum.acctPay, RoleEnum.acctRcv, RoleEnum.genLedger]);
+    roleProxy.updateRoles('mstooge', [RoleEnum.inventory, RoleEnum.production, RoleEnum.sales, RoleEnum.shipping]);
 
     facade.registerProxy(roleProxy);
   }

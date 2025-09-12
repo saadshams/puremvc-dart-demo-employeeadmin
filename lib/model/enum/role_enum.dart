@@ -1,48 +1,48 @@
 enum RoleEnum {
-  ADMIN,
-  ACCT_PAY,
-  ACCT_RCV,
-  EMP_BENEFITS,
-  GEN_LEDGER,
-  PAYROLL,
-  INVENTORY,
-  PRODUCTION,
-  QUALITY_CTL,
-  SALES,
-  ORDERS,
-  CUSTOMERS,
-  SHIPPING,
-  RETURNS;
+  admin,
+  acctPay,
+  acctRcv,
+  empBenefits,
+  genLedger,
+  payroll,
+  inventory,
+  production,
+  qualityCtl,
+  sales,
+  orders,
+  customers,
+  shipping,
+  returns;
 
   String get label {
     switch (this) {
-      case RoleEnum.ADMIN:
+      case RoleEnum.admin:
         return 'Administrator';
-      case RoleEnum.ACCT_PAY:
+      case RoleEnum.acctPay:
         return 'Accounts Payable';
-      case RoleEnum.ACCT_RCV:
+      case RoleEnum.acctRcv:
         return 'Accounts Receivable';
-      case RoleEnum.EMP_BENEFITS:
+      case RoleEnum.empBenefits:
         return 'Employee Benefits';
-      case RoleEnum.GEN_LEDGER:
+      case RoleEnum.genLedger:
         return 'General Ledger';
-      case RoleEnum.PAYROLL:
+      case RoleEnum.payroll:
         return 'Payroll';
-      case RoleEnum.INVENTORY:
+      case RoleEnum.inventory:
         return 'Inventory';
-      case RoleEnum.PRODUCTION:
+      case RoleEnum.production:
         return 'Production';
-      case RoleEnum.QUALITY_CTL:
+      case RoleEnum.qualityCtl:
         return 'Quality Control';
-      case RoleEnum.SALES:
+      case RoleEnum.sales:
         return 'Sales';
-      case RoleEnum.ORDERS:
+      case RoleEnum.orders:
         return 'Orders';
-      case RoleEnum.CUSTOMERS:
+      case RoleEnum.customers:
         return 'Customers';
-      case RoleEnum.SHIPPING:
+      case RoleEnum.shipping:
         return 'Shipping';
-      case RoleEnum.RETURNS:
+      case RoleEnum.returns:
         return 'Returns';
     }
   }

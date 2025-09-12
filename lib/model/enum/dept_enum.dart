@@ -1,24 +1,24 @@
 enum DeptEnum {
-  NONE_SELECTED,
-  ACCT,
-  SALES,
-  PLANT,
-  SHIPPING,
-  QC;
+  noneSelected,
+  acct,
+  sales,
+  plant,
+  shipping,
+  qc;
 
   String get label {
     switch (this) {
-      case DeptEnum.NONE_SELECTED:
+      case DeptEnum.noneSelected:
         return "--None Selected--";
-      case DeptEnum.ACCT:
+      case DeptEnum.acct:
         return "Accounting";
-      case DeptEnum.SALES:
+      case DeptEnum.sales:
         return "Sales";
-      case DeptEnum.PLANT:
+      case DeptEnum.plant:
         return "Plant";
-      case DeptEnum.SHIPPING:
+      case DeptEnum.shipping:
         return "Shipping";
-      case DeptEnum.QC:
+      case DeptEnum.qc:
         return "Quality Control";
     }
   }
